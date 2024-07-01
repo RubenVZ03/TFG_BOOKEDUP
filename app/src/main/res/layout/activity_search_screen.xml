@@ -1,0 +1,278 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchScreen">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:background="@drawable/fondo"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginTop="25dp"
+            app:srcCompat="@drawable/bookedup_title" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Buscar"
+            android:textColor="#000000"
+            android:textSize="34sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:gravity="center">
+
+            <AutoCompleteTextView
+                android:id="@+id/etSearch"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/editext_background"
+                android:completionThreshold="1"
+                android:drawableStart="@drawable/search"
+                android:drawablePadding="8dp"
+                android:hint="¿Qué servicio estás buscando?"
+                android:inputType="text"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutUbi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1">
+
+                <AutoCompleteTextView
+                    android:id="@+id/etUbi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/editext_background"
+                    android:completionThreshold="1"
+                    android:drawableStart="@drawable/ubi_icon"
+                    android:drawablePadding="8dp"
+                    android:hint="¿Dónde?"
+                    android:inputType="text"
+                    android:paddingStart="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="15dp"
+                    android:paddingBottom="15dp"
+                    android:singleLine="true"
+                    android:textColorHint="#808080" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutClock"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_weight="1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etClock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/editext_background"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/clock"
+                    android:drawablePadding="8dp"
+                    android:focusable="false"
+                    android:hint=" ¿Cuándo?"
+                    android:inputType="none"
+                    android:paddingStart="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="15dp"
+                    android:paddingBottom="15dp"
+                    android:singleLine="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navegador2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvServicios"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="34dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Recomendados"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+                <ImageButton
+                    android:id="@+id/btn_filtros"
+                    android:layout_width="85dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@drawable/editext_background"
+                    android:onClick="eliminarFiltros"
+                    app:srcCompat="@drawable/filter_off" />
+            </LinearLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="390dp"
+                android:layout_height="188dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14dp" />
+
+            <TextView
+                android:id="@+id/tvOfertas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Ofertas Especiales"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerOfertas"
+                android:layout_width="390dp"
+                android:layout_height="188dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="14dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/navegador2"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/nav" />
+
+    <ImageView
+        android:id="@+id/dateIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:onClick="irCitas"
+        app:layout_constraintEnd_toStartOf="@+id/accountIcon2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/searchIcon2"
+        app:layout_constraintTop_toTopOf="@+id/searchIcon2"
+        app:srcCompat="@drawable/date_icon_1" />
+
+    <ImageView
+        android:id="@+id/searchIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/dateIcon2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/homeIcon2"
+        app:layout_constraintTop_toTopOf="@+id/navegador2"
+        app:srcCompat="@drawable/search_icon_2" />
+
+    <ImageView
+        android:id="@+id/homeIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:onClick="irHome"
+        app:layout_constraintEnd_toStartOf="@+id/searchIcon2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchIcon2"
+        app:srcCompat="@drawable/home_icon_2"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/accountIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:onClick="irAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dateIcon2"
+        app:layout_constraintTop_toTopOf="@+id/dateIcon2"
+        app:srcCompat="@drawable/account_icon_1"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/navegador2"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnVerUbicaciones"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@null"
+            android:onClick="irMapa"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ubication"
+            app:layout_constraintBottom_toTopOf="@+id/navegador2"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

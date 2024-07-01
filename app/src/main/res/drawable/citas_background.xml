@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="20dp"/> <!-- Cambia el radio a un valor menor para menos curvatura -->
+    <gradient
+        android:startColor="#FFFFFF"
+        android:endColor="#64BEFF"
+        android:angle="90"/> <!-- Ángulo 90 para degradado de arriba hacia abajo -->
+</shape>

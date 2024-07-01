@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppointmentsScreen">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="130dp"
+        android:background="@drawable/fondo"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginTop="25dp"
+            android:visibility="visible"
+            app:srcCompat="@drawable/bookedup_title" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Citas"
+            android:textColor="#000000"
+            android:textSize="34dp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/tvPendientes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="50dp"
+        android:clickable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:inputType="none"
+        android:longClickable="false"
+        android:text="CITAS PENDIENTES"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <EditText
+        android:id="@+id/tvCompletadas"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:ems="10"
+        android:focusable="false"
+        android:longClickable="false"
+        android:text="CITAS COMPLETADAS"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerViewPendientes"
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewPendientes"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewPendientes" />
+
+    <ImageView
+        android:id="@+id/navegador4"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/nav" />
+
+    <ImageView
+        android:id="@+id/dateIcon4"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/accountIcon4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/searchIcon4"
+        app:layout_constraintTop_toTopOf="@+id/navegador4"
+        app:srcCompat="@drawable/date_icon_2" />
+
+    <ImageView
+        android:id="@+id/searchIcon4"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:onClick="irSearch"
+        app:layout_constraintEnd_toStartOf="@+id/dateIcon4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/homeIcon4"
+        app:layout_constraintTop_toTopOf="@+id/accountIcon4"
+        app:srcCompat="@drawable/search_icon_1" />
+
+    <ImageView
+        android:id="@+id/accountIcon4"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginTop="5dp"
+        android:onClick="irAccount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dateIcon4"
+        app:layout_constraintTop_toTopOf="@+id/dateIcon4"
+        app:srcCompat="@drawable/account_icon_1"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageView
+        android:id="@+id/homeIcon4"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:onClick="irHome"
+        app:layout_constraintEnd_toStartOf="@+id/searchIcon4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/accountIcon4"
+        app:srcCompat="@drawable/home_icon_2"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPendientes"
+        android:layout_width="341dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvPendientes"
+        app:layout_constraintHeight_percent="0.225"
+        app:layout_constraintStart_toStartOf="@+id/tvPendientes"
+        app:layout_constraintTop_toBottomOf="@+id/tvPendientes" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCompletadas"
+        android:layout_width="341dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvCompletadas"
+        app:layout_constraintHeight_percent="0.225"
+        app:layout_constraintStart_toStartOf="@+id/tvCompletadas"
+        app:layout_constraintTop_toBottomOf="@+id/tvCompletadas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

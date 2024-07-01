@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F3F8FE"/> <!-- Color de fondo -->
+            <corners android:radius="20dp"/> <!-- Radio de las esquinas -->
+        </shape>
+    </item>
+    <!-- Borde -->
+    <item>
+        <shape android:shape="rectangle">
+            <stroke android:width="1dp" android:color="#CCCCCC"/> <!-- Borde gris claro -->
+            <corners android:radius="20dp"/> <!-- Radio de las esquinas -->
+        </shape>
+    </item>
+    <!-- Sombra -->
+    <item android:left="1dp" android:top="1dp">
+        <shape android:shape="rectangle">
+            <stroke android:width="1dp" android:color="#DDDDDD"/> <!-- Borde gris más claro -->
+            <corners android:radius="20dp"/> <!-- Radio de las esquinas -->
+        </shape>
+    </item>
+</layer-list>
